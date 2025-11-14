@@ -1,30 +1,24 @@
 pipeline {
     agent any
-
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/KarthikaReddy503/gitpractice.git'
+                git branch: 'main', url: 'https://github.com/KarthikaReddy503/gitpractice.git'
             }
         }
-
         stage('Build') {
             steps {
                 echo 'Building...'
-                // If you had code, you could run build commands here
             }
         }
-
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // If you had code, you could run test commands here
+                echo 'Testing...'
             }
         }
-
         stage('Success') {
             steps {
-                echo 'Pipeline executed successfully!'
+                echo 'Pipeline completed successfully!'
             }
         }
     }
